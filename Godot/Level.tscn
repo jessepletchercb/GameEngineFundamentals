@@ -13,6 +13,8 @@
 [ext_resource type="ArrayMesh" uid="uid://el0e8pvw57xn" path="res://Assets/Models/OBJ format/building-l.obj" id="11_s0cgv"]
 [ext_resource type="ArrayMesh" uid="uid://ktykkp4j1suj" path="res://Assets/Models/OBJ format/building-m.obj" id="12_3ppgv"]
 [ext_resource type="ArrayMesh" uid="uid://dw52kqq3sgaoi" path="res://Assets/Models/OBJ format/building-n.obj" id="13_wesx8"]
+[ext_resource type="PackedScene" uid="uid://bw53o1d1ts408" path="res://Building1.tscn" id="14_esphl"]
+[ext_resource type="PackedScene" uid="uid://bmqvb43ho7o3c" path="res://building_2.tscn" id="15_5qkpu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qqkhr"]
 size = Vector2(200, 200)
@@ -97,3 +99,9 @@ mesh = ExtResource("12_3ppgv")
 [node name="BuildingN" type="MeshInstance3D" parent="BuildingL/BuildingM" unique_id=2052373145]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1842804, 0, -2.9048905)
 mesh = ExtResource("13_wesx8")
+
+[node name="Building1" parent="BuildingL/BuildingM" unique_id=1762109466 instance=ExtResource("14_esphl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.602481, 4.7683716e-07, -0.82167625)
+
+[node name="Building2" parent="BuildingL/BuildingM" unique_id=1268341579 instance=ExtResource("15_5qkpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.602481, 4.7683716e-07, -0.82167625)
