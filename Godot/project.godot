@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="GodotFundamentals"
+run/main_scene="uid://bqh8cspvld4hq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Player=""
 
 [physics]
 

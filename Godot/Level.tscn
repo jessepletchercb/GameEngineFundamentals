@@ -15,14 +15,24 @@
 [ext_resource type="ArrayMesh" uid="uid://dw52kqq3sgaoi" path="res://Assets/Models/OBJ format/building-n.obj" id="13_wesx8"]
 [ext_resource type="PackedScene" uid="uid://bw53o1d1ts408" path="res://Building1.tscn" id="14_esphl"]
 [ext_resource type="PackedScene" uid="uid://bmqvb43ho7o3c" path="res://building_2.tscn" id="15_5qkpu"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller.tscn" id="16_5qkpu"]
+[ext_resource type="PackedScene" uid="uid://bsof21esn4cnx" path="res://pressure_plate.tscn" id="17_dcckh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qqkhr"]
 size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dcckh"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
 
 [node name="Node3D" type="Node3D" unique_id=1805944565]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=648323985]
 mesh = SubResource("PlaneMesh_qqkhr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1429453250]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1614668498]
+shape = SubResource("ConcavePolygonShape3D_dcckh")
 
 [node name="BuildingA" type="MeshInstance3D" parent="." unique_id=1134441326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7379054, 0, 1.4344835)
@@ -105,3 +115,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.602481, 4.7683716e-07, -0.
 
 [node name="Building2" parent="BuildingL/BuildingM" unique_id=1268341579 instance=ExtResource("15_5qkpu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.602481, 4.7683716e-07, -0.82167625)
+
+[node name="ProtoController" parent="." unique_id=59126304 instance=ExtResource("16_5qkpu")]
+
+[node name="PressurePlate" parent="." unique_id=1015033293 instance=ExtResource("17_dcckh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
